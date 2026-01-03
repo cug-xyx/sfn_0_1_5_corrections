@@ -97,7 +97,7 @@ sfn_all_sites <- sfn_plant_sites %>%
 sfn_plant_data <- read_sfn_data(sfn_plant_sites$si_code,
                                 folder=sfn_RData_plant)
 
-# plant
+# sapwood
 sfn_sapwood_data <- read_sfn_data(sfn_sapwood_sites$si_code,
                                 folder=sfn_RData_sw)
 
@@ -105,7 +105,7 @@ sfn_sapwood_data <- read_sfn_data(sfn_sapwood_sites$si_code,
 sfn_leaf_data <- read_sfn_data(sfn_leaf_sites$si_code,
                                   folder=sfn_RData_sw)
 
-# # sapwood only 
+# # sapwood only
 # sfn_sw_data <- read_sfn_data(sfn_sw_codes,
 #                              folder=sfn_RData_sw)
 # # all
@@ -157,7 +157,7 @@ get_stand_md(sfn_sapwood_data[['USA_MOR_SF']])$st_basal_area <- 26.34
 # USA_SYL_HL1 -------------------------------------------------------------
 # Use stand composition from USA_SYL_HL2 in HL1
 
-syl_hl1_spbasperc<- sfn_plant_data[['USA_SYL_HL2']]%>% 
+syl_hl1_spbasperc <- sfn_plant_data[['USA_SYL_HL2']]%>% 
   get_species_md() %>% 
   filter(sp_name%in%c('Betula alleghaniensis','Acer saccharum',
                       'Tsuga canadensis')) %>% 
