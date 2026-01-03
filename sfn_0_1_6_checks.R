@@ -45,7 +45,7 @@ sfn_metadata_leaf_0.1.6 <- read_sfn_metadata(folder =  out_leaf,
 sfn_plant_data_0.1.6 <- read_sfn_data(sfn_metadata_plant_0.1.6[['site_md']]$si_code,
                                 folder=out_plant)
 
-# plant
+# sapwood
 sfn_sapwood_data_0.1.6 <- read_sfn_data(sfn_metadata_sapwood_0.1.6[['site_md']]$si_code,
                                   folder=out_sapwood)
 
