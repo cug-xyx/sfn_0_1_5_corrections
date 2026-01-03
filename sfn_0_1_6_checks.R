@@ -2,6 +2,7 @@ library(sapfluxnetr)
 library(dplyr)
 library(purrr)
 library(tidyr)
+source('utils.R')
 
 
 # 1. Read metadata ---------------------------------------------------------------
@@ -154,7 +155,7 @@ ESP_LAS@env_data %>% names
 
 ESP_LAS %>% sfn_plot(type='env')
 
-sapfluxnetQC1::qc_vpd(
+qc_vpd(
 data=tibble(ta=get_env_data(ESP_LAS)$ta,
        rh=get_env_data(ESP_LAS)$rh)
 ) %>% pull(vpd) %>% plot()

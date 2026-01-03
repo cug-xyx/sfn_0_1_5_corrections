@@ -2,6 +2,7 @@ library(sapfluxnetr)
 library(dplyr)
 library(purrr)
 library(tidyr)
+source('utils.R')
 
 
 # 1. Read metadata ---------------------------------------------------------------
@@ -463,7 +464,7 @@ get_plant_md(sfn_plant_data[['RUS_POG_VAR']]) <-
 get_env_data(sfn_plant_data[['ESP_LAS']])<- 
   get_env_data(sfn_plant_data[['ESP_LAS']]) %>% 
   select(-TIMESTAMP) %>% 
-  mutate(vpd=sapfluxnetQC1::qc_vpd(
+  mutate(vpd=qc_vpd(
     data=tibble(ta=get_env_data(sfn_plant_data[['ESP_LAS']])$ta,
                 rh=get_env_data(sfn_plant_data[['ESP_LAS']])$rh))$vpd) 
 
